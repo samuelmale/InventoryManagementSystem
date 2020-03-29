@@ -1,8 +1,12 @@
 package com.rafsan.inventory.controller.login;
 
-import com.rafsan.inventory.model.EmployeeModel;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import org.apache.commons.codec.digest.DigestUtils;
+
+import com.rafsan.inventory.model.EmployeeModel;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -19,7 +23,6 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import org.apache.commons.codec.digest.DigestUtils;
 
 public class LoginController implements Initializable {
 
@@ -69,7 +72,6 @@ public class LoginController implements Initializable {
 
             String username = usernameField.getText().trim();
             String password = DigestUtils.sha1Hex((passwordField.getText().trim()));
-
             if (model.checkUser(username)) {
 
                 if (model.checkPassword(username, password)) {

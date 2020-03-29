@@ -106,8 +106,7 @@ public class EmployeeModel implements EmployeeDao {
         Query query = session.createQuery("from Employee where userName = :username");
         query.setParameter("username", username);
         Employee employee = (Employee) query.uniqueResult();
-        session.getTransaction().commit();
-
+        session.getTransaction().commit();        
         return employee.getPassword().equals(password);
     }
 }

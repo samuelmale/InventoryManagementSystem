@@ -36,7 +36,8 @@ public class MainApp extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    @SuppressWarnings("restriction")
+	public static void main(String[] args) {
 
         if (HibernateUtil.setSessionFactory()) {
             launch(args);
